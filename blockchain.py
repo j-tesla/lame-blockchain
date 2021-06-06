@@ -4,7 +4,7 @@ Contains `Blockchain` class
 
 import json
 from hashlib import sha256
-from time import time
+from datetime import datetime
 from urllib.parse import urlparse
 
 import requests
@@ -12,7 +12,7 @@ import requests
 
 class Blockchain:
     """
-    Basic Blockchain implementation
+    A lame Blockchain implementation
     """
 
     def __init__(self):
@@ -42,7 +42,7 @@ class Blockchain:
 
         block = {
             'index': len(self.chain) + 1,
-            'timestamp': time(),
+            'timestamp': datetime.utcnow().isoformat(),
             'transactions': self.current_transactions,
             'proof': proof,
             'previous_hash': previous_hash,
@@ -77,7 +77,7 @@ class Blockchain:
         Last Block in the BlockChain
         :return: Last Block
         """
-        return self.chain[-1]
+        return self.chain[-1] if self.chain else None
 
     def proof_of_work(self, previous_proof: int) -> int:
         """

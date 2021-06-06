@@ -1,5 +1,5 @@
 """
-Flask app for the Blockchain
+Flask app for the Lame Blockchain
 """
 from os import environ
 from uuid import uuid4
@@ -8,7 +8,7 @@ from flask import Flask, jsonify, request
 
 from blockchain import Blockchain
 
-app = Flask(__name__)
+app = Flask('lame-blockchain')
 
 # Globally unique address for this node
 node_identifier = str(uuid4()).replace('-', '')
