@@ -1,3 +1,6 @@
+"""
+Flask app for the Blockchain
+"""
 from os import environ
 from uuid import uuid4
 
@@ -103,8 +106,8 @@ def consensus():
 
 if __name__ == '__main__':
     try:
-        port = environ['PORT']
-        port = int(port)
+        PORT = environ['PORT']
+        PORT = int(PORT)
     except (KeyError, ValueError):
-        port = 5000
-    app.run(host='0.0.0.0', port=5000)
+        PORT = 5000
+    app.run(host='0.0.0.0', port=PORT)

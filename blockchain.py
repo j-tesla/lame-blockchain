@@ -1,3 +1,7 @@
+"""
+Contains `Blockchain` class
+"""
+
 import json
 from hashlib import sha256
 from time import time
@@ -7,6 +11,10 @@ import requests
 
 
 class Blockchain:
+    """
+    Basic Blockchain implementation
+    """
+
     def __init__(self):
         self.nodes = set()
         self.chain = []
